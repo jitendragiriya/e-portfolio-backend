@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://e-portfolio-backend.up.railway.app",
     credentials: true,
     optionSuccessStatus: 200,
   }),
