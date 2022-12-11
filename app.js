@@ -7,16 +7,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:3000",
     credentials: true,
     optionSuccessStatus: 200,
   }),
 );
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
 
 app.use(cookieParser());
 app.use(fileupload());
@@ -40,7 +35,7 @@ app.use("/api", require("./routes/admin/adminContactRoute"));
 app.use("/api", require("./routes/admin/myPortfolioRoute"));
 
 
-app.get("*", (req, res)=>{
+app.get("/", (req, res)=>{
     res.send("API running...");
 })
 
