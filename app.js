@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "https://e-portfolio-backend.up.railway.app",
+    origin: "https://myshop-e-portfolio.netlify.app",
     credentials: true,
     optionSuccessStatus: 200,
   }),
