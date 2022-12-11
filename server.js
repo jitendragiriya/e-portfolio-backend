@@ -1,6 +1,6 @@
-const app = require("./backend/app");
+const app = require("./app");
 const cloudinary = require("cloudinary");
-const connectDB = require("./backend/config/db");
+const connectDB = require("./config/db");
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -21,7 +21,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET_KEY,
 });
 
-const ErrorHandler = require("./backend/middleware/error");
+const ErrorHandler = require("./middleware/error");
 
 app.use(ErrorHandler);
 const PORT = process.env.PORT || 3000;
